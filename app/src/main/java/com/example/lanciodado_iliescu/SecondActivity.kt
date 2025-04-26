@@ -1,6 +1,9 @@
 package com.example.lanciodado_iliescu
 
+import android.content.Intent
 import android.os.Bundle
+import android.widget.Button
+import android.widget.EditText
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -11,10 +14,31 @@ class SecondActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContentView(R.layout.activity_second)
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
-            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
-            insets
+
+        val numeroUtente = findViewById<EditText>(R.id.numeroUtente) //numero in input
+
+        val lancia = findViewById<Button>(R.id.lancia) //pulsante per lanciare il dado e richiamare secondo activity
+        lancia.setOnClickListener {
+            //Convertire input utente ad intero passando per la stringa
+            val numStringa = numeroUtente.text.toString()
+            val numeroInput = numStringa.toIntOrNull()
+
+            val mioRandom = estraiNumero()
+            //Controllo del numero inserito dall'utente
+            if(numeroInput != null && numeroInput > 0 && numeroInput <=6 ){
+                lanciaIntent(mioRandom, numeroInput)
+            }
         }
+    }
+
+    private fun estraiNumero(): Int{
+        return (1..6).random()
+    }
+
+    private fun lanciaIntent(mioRandom: Int, numeroInput: Int){
+        val mioIntent = Intent ( this, SecondActivity::class.java)
+        mioIntent.putExtra("numeroRandom", mioRandom)
+        mioIntent.putExtra("numeroInput", numeroInput)
+        startActivity(mioIntent)
     }
 }

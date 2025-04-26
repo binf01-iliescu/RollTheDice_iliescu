@@ -7,21 +7,29 @@
     android:layout_height="match_parent"
     tools:context=".SecondActivity">
 
-    <ImageView
-        android:id="@+id/imageView2"
-        android:layout_width="318dp"
-        android:layout_height="303dp"
+    <EditText
+        android:id="@+id/numeroUtente"
+        android:layout_width="231dp"
+        android:layout_height="73dp"
+        android:autofillHints=""
+        android:hint="numero da 1 a 6"
+        android:inputType="number"
+        android:maxLength="1"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/SecondActivity_text"
-        app:srcCompat="@drawable/dices"
-        tools:layout_editor_absoluteX="46dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/SecondActivity_text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="TextView"
-        app:layout_constraintBottom_toTopOf="@+id/imageView2"
+    <Button
+        android:id="@+id/lancia"
+        android:layout_width="164dp"
+        android:layout_height="70dp"
+        android:text="Lancia"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:layout_editor_absoluteX="183dp" />
+        app:layout_constraintVertical_bias="0.733" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -36,7 +36,7 @@ class SecondActivity : AppCompatActivity() {
     }
 
     private fun lanciaIntent(mioRandom: Int, numeroInput: Int){
-        val mioIntent = Intent ( this, SecondActivity::class.java)
+        val mioIntent = Intent ( this, ThirdActivity::class.java)
         mioIntent.putExtra("numeroRandom", mioRandom)
         mioIntent.putExtra("numeroInput", numeroInput)
         startActivity(mioIntent)

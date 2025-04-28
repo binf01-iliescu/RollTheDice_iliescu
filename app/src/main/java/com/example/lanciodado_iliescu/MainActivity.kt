@@ -20,9 +20,6 @@ class MainActivity : AppCompatActivity() {
         var textViewtitle = findViewById<TextView>(R.id.textViewtitle)
         var imageView = findViewById<ImageView>(R.id.imageView)
         buttonLancia.setOnClickListener(View.OnClickListener {
-            val mioToast = Toast.makeText(this, "DADO LANCIATO!!", Toast.LENGTH_LONG)
-            mioToast.show()
-
             //richiamo il secondo main
             lanciaIntent()
         })

@@ -4,6 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
+import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -19,6 +20,9 @@ class SecondActivity : AppCompatActivity() {
 
         val lancia = findViewById<Button>(R.id.lancia) //pulsante per lanciare il dado e richiamare secondo activity
         lancia.setOnClickListener {
+            val mioToast = Toast.makeText(this, "DADO LANCIATO!!", Toast.LENGTH_LONG)
+            mioToast.show()
+
             //Convertire input utente ad intero passando per la stringa
             val numStringa = numeroUtente.text.toString()
             val numeroInput = numStringa.toIntOrNull()
